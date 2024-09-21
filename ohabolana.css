@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    position: fixed; /* Rendre le header fixe */
+    top: 0;
+    width: 100%; /* Occuper toute la largeur de la page */
+    height: 60px;
+    background-color:beige; /* Couleur de fond */
+    z-index: 1000; /* S'assurer que le header reste au-dessus du reste de la page */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ajouter une ombre pour différencier le header du reste */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 50px; /* Taille du logo, ajustable */
+}
+
+.navbar {
+    display: flex;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+    color: #007BFF; /* Couleur au survol */
+}
+
+/* Section Ohabolana */
+.ohabolana-section {
+    background-color: #2c3e50fa; /* Couleur de fond personnalisée */
+    padding: 90px;
+   top: 50%;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    margin: 50px auto;
+    max-width: 1000px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Titre */
+.ohabolana-section h2 {
+    color: red;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 30px;
+    text-decoration: underline;
+}
+
+/* Ohabolana items */
+.ohabolana-list {
+    font-size: 1.2em;
+    color: #ecf0f1; /* Couleur du texte */
+    line-height: 1.6;
+}
+
+.ohabolana-item {
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.ohabolana-item::before {
+    content: "❝";
+    position: absolute;
+    left: 0;
+    font-size: 2em;
+    top: -10px;
+    color: #e74c3c; /* Couleur des guillemets */
+}
+
+/* Animation lors du défilement */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    position: fixed; /* Rendre le header fixe */
+    top: 0;
+    width: 100%; /* Occuper toute la largeur de la page */
+    height: 60px;
+    background-color:beige; /* Couleur de fond */
+    z-index: 1000; /* S'assurer que le header reste au-dessus du reste de la page */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ajouter une ombre pour différencier le header du reste */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 50px; /* Taille du logo, ajustable */
+}
+
+.navbar {
+    display: flex;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+    color: #007BFF; /* Couleur au survol */
+}
+
+/* Styles de base */
+
+/* Style des sections de contenu */
+.content-section {
+    margin: 50px auto;
+    max-width: 800px;
+    margin-top: 90px;
+    padding: 20px;
+    background: #33333379;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Titre des sections */
+.content-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: red;
+    text-decoration: underline;
+}
+
+/* Style de la liste des Vokatra */
+.vokatra-list {
+    list-style: none;
+    padding: 0;
+}
+
+.vokatra-list li {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+}
+
+/* Ajout de puce personnalisée */
+.vokatra-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #2980b9;
+    font-size: 1.5em;
+    top: 0;
+}
+
+/* Boutons */
+.button-container {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+}
+
+/* Animation au défilement */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

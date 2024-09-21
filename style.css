@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+.header {
+    position: fixed; /* Rendre le header fixe */
+    top: 0;
+    width: 100%; /* Occuper toute la largeur de la page */
+    height: 60px;
+    background-color: beige; /* Couleur de fond */
+    z-index: 1000; /* S'assurer que le header reste au-dessus du reste de la page */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ajouter une ombre pour différencier le header du reste */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 50px; /* Taille du logo, ajustable */
+}
+
+.navbar {
+    display: flex;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+    color: #007BFF; /* Couleur au survol */
+}
+
+/* Pour les petits écrans (téléphones) */
+@media (max-width: 600px) {
+    .header {
+        height: auto;
+        padding: 10px;
+    }
+}
+.carousel { 
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh; /* Utilise la pleine hauteur de l'écran */
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.4em;
+  background-color: #33333375;
+  margin-top: -150px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.808);
+  max-width: 100%;
+  line-height: 1.6;
+  width: 80%;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #007BFF; /* Couleur pour les titres des chapitres */
+  text-align: center;
+  text-decoration: underline;
+}
+
+.overlay-title {
+  position: absolute;
+  top: 50px; /* Positionner le titre en haut de l'image */
+  width: 100%;
+  text-align: center;
+  z-index: 10; /* Assure que le titre est au-dessus de tout */
+}
+
+
+.overlay-title h1 {
+  font-size: 3em;
+  color: red;
+  text-decoration: underline;
+  font-weight: bold;
+  margin: 0;
+  padding: 10px;
+}
+
+h3 {
+  font-size: 1.5em;
+  text-decoration: underline;
+  margin-bottom: 8px;
+  color: #66ff66; /* Couleur pour les sous-titres */
+}
+
+ul {
+
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  cursor: pointer;
+  background-color: #007BFF;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(255, 255, 255, 0.276);
+  color: #007BFF;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* footer */
+footer {
+  background-color: #3333335b;
+  color: black;
+  padding: 30px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-content h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: black;
+  text-transform: uppercase;
+  animation: slideIn 2s ease-in-out;
+}
+
+.footer-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out 1s;
+}
+
+.footer-links a {
+  margin: 0 15px;
+  color: black;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-links a:hover {
+  color: #007BFF;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  animation: slideInBottom 2s ease-in-out 1.5s;
+}
+
+@keyframes slideIn {
+  0% {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes slideInBottom {
+  0% {
+      transform: translateY(100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+footer:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  animation: animateBorder 5s linear infinite;
+}
+
+@keyframes animateBorder {
+  0% {
+      background-position: 0% 0;
+  }
+  100% {
+      background-position: 100% 0;
+  }
+}

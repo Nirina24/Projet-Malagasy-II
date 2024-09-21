@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    position: fixed; /* Rendre le header fixe */
+    top: 0;
+    width: 100%; /* Occuper toute la largeur de la page */
+    height: 60px;
+    background-color: beige; /* Couleur de fond */
+    z-index: 1000; /* S'assurer que le header reste au-dessus du reste de la page */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ajouter une ombre pour différencier le header du reste */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 50px; /* Taille du logo, ajustable */
+}
+
+.navbar {
+    display: flex;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+    color: #007BFF; /* Couleur au survol */
+}
+
+.section {
+    margin: 40px 0;
+}
+
+
+
+.image-section {
+    flex: 1;
+    padding: 10px;
+}
+
+.chapter-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.chapter-image:hover {
+    transform: scale(1.05);
+}
+h1 {
+    font-size: 3em;
+    color: red;
+    text-decoration: underline;
+    font-weight: bold;
+    margin: 0;
+    padding: 10px;
+    margin-left: 300px;
+    margin-top: 90px;
+}
+
+h4 {
+    text-decoration: underline;
+    margin-left: 20px;
+}
+.text-section {
+    flex: 2;
+    background-color: #33333336;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.text-section h2 {
+    color: #3498db;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+.text-section p, .text-section ul {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.text-section ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.text-section ul li {
+    margin-bottom: 10px;
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* On cache d'abord les images et le texte */
+.image-text-wrapper {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* Lorsqu'ils deviennent visibles */
+.image-text-wrapper.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.chapter-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.6s ease;
+}
+
+.chapter-image.visible {
+    transform: scale(1.1);
+}
+
+/* footer */
+footer {
+    background-color: #3333335b;
+    color: black;
+    padding: 30px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .footer-content h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    animation: slideIn 2s ease-in-out;
+  }
+  
+  .footer-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out 1s;
+  }
+  
+  .footer-links a {
+    margin: 0 15px;
+    color: black;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .footer-links a:hover {
+    color: #007BFF;
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    animation: slideInBottom 2s ease-in-out 1.5s;
+  }
+  
+  @keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+  
+  @keyframes slideInBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+  }
+  
+  footer:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    animation: animateBorder 5s linear infinite;
+  }
+  
+  @keyframes animateBorder {
+    0% {
+        background-position: 0% 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+  }
+  
